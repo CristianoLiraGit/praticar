@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #sidebar{
+        position: absolute;
+        width: 300px;
+        height: 100vh; /* A altura vai ser o tamanho total da altura da tela. Poderia ser 100% */
+        background-color: #000;
+        left: -300px;
+        transition: .4s;
+    }
+
+    #sidebar.active {
+        left: 0;
+    }
+
+    #sidebar ul li{
+        list-style: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 20px 24px;
+        cursor: pointer;
+    }
+
+    #sidebar ul li:hover {
+        background-color: gray;
+    }
+
+    #sidebar .toggle-btn {
+        position: absolute;
+        top: 30px;
+        left: 330px;
+    }
+
+    #sidebar .toggle-btn:active {
+        transform: translate(1px, 1px);
+    }
+
+    .toggle-btn span {
+        width: 45px;
+        height: 4px;
+        background-color: #000;
+        display: block;
+        margin-top: 4px;
+    }
+</style>
+<body>
+    <div id="sidebar">
+        <div class="toggle-btn" onclick="show()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul>
+            <li>Home</li>
+            <li>Work</li>
+            <li>About</li>
+            <li>Contact </li>
+        </ul>    
+    </div>
+    <script>
+        function show() {
+            document.getElementById('sidebar').classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
