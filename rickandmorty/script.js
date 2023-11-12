@@ -14,8 +14,6 @@ const fetchApi = (value) => {
     return result;
 }
 
-fetchApi(1);
-
 btnGo.addEventListener('click', async (event) =>{
     event.preventDefault(); // Prevenir o padrão, que é o carregamento da página.
     const result = await fetchApi(characterId.value);
